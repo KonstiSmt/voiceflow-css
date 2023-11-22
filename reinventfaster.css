@@ -1,3 +1,11 @@
-.vfrc-message {
-  max-width: 300px !important;
+@media (min-width: 768px) {
+
+    .vfrc-message {
+        max-width: 300px !important;
+    }
+
+
+    .vfrc-header--button {
+        display: none !important;
+    }
 }
