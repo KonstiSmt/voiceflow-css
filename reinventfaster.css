@@ -1,9 +1,12 @@
-.vfrc-header--button {
+.vfrc-launcher {
+    display: none !important;
+}
+/* .vfrc-header--button {
     display: none !important;
 }
 
 
 .vfrc-message {
     max-width: 300px !important;
-}
+} */
 
