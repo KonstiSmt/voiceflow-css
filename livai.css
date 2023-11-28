@@ -1,5 +1,5 @@
 .vfrc-launcher {
-    display: none;
+    display: none !important;
 }
 
 .vfrc-widget {
