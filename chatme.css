@@ -7,11 +7,15 @@
 }
 
 @media (min-width: 768px) {
-        .vfrc-widget {
+    .vfrc-widget {
         z-index: 10000000 !important;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .vfrc-message {
+        max-width: 300px;
     }
     
     .c-ivtLaR-gAaWLG-withChat-true {
