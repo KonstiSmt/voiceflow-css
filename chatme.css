@@ -6,6 +6,10 @@
     z-index: 10000000 !important;
 }
 
+.vfrc-input {
+    font-size: 16px !important;
+}
+
 @media (min-width: 768px) {
     .vfrc-widget {
         z-index: 10000000 !important;
@@ -15,7 +19,7 @@
     }
 
     .vfrc-message {
-        max-width: 300px;
+        max-width: 300px !important;
     }
     
     .c-ivtLaR-gAaWLG-withChat-true {
