@@ -1,3 +1,8 @@
 button.vfrc-launcher {
   background-color: #c4ecf3;
 }
+
+
+button.vfrc-launcher:hover {
+  background-color: #c4ecf3;
+}
