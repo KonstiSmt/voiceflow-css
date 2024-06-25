@@ -12,3 +12,8 @@ button.vfrc-launcher img {
   height: 100% !important;
   border-radius: 100% !important;
 }
+
+
+.vfrc-proactive-close {
+  opacity: initial !important;
+}
