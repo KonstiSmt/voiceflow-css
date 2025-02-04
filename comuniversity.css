@@ -1,3 +1,7 @@
 .vfrc-launcher {
     display: none !important;
 }
+
+.vfrc-header {
+    background-color: #003F7F !important;
+}
