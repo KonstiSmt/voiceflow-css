@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSGVO Prozess Übersicht - Externe Berater (Final Korrigiert)</title>
+    <style>
+        /* --- Basic Reset & Body Styling --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 25px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* --- Headings & Text --- */
+        h1, h2, h3 {
+            color: #0056b3; /* A professional blue */
+            margin-bottom: 0.8em;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 0.3em;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.2em;
+            color: #003d80;
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-top: 1.5em;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            color: #0069d9;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 1em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        code {
+            background-color: #e9ecef;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: Consolas, 'Courier New', monospace;
+            color: #c7254e; /* A reddish color for code */
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        /* --- Sections --- */
+        section {
+            margin-bottom: 2em;
+            padding: 1.5em;
+            background-color: #fdfdfd;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5em;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 12px 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #e9ecef;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #f8f9fa;
+        }
+
+        tbody tr:hover {
+            background-color: #e2e6ea;
+        }
+
+        /* --- Mermaid Chart Container --- */
+        .mermaid-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            margin-top: 1.5em;
+            overflow-x: auto; /* Scroll if chart is too wide */
+        }
+         /* Ensure SVG takes space */
+        .mermaid-container svg {
+             display: block;
+             max-width: 100%;
+             height: auto;
+         }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+            h3 { font-size: 1.2em; }
+            table, th, td {
+                font-size: 0.9em;
+                padding: 8px 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Konzeptionelle Übersicht: DSGVO-Datenverarbeitung für externe Berater (Aktualisiert)</h1>
+        </header>
+
+        <p style="text-align: center; margin-top: 1em; font-style: italic;">
+            Diese Übersicht beschreibt, wie wir Beraterdaten von der Erstellung bis zur potenziellen Löschung verwalten, dabei die DSGVO-Prinzipien beachten, verschiedene Berater-Typen und Datenquellen berücksichtigen.
+        </p>
+
+        <section id="kernprinzipien">
+             <h2>I. Kernprinzipien (Gilt für ALLE)</h2>
+             <ul>
+                 <li><strong>Rechtsgrundlage:</strong> Wir benötigen IMMER einen gültigen Grund (Rechtsgrundlage) gemäß DSGVO. Die Hauptgrundlagen sind:
+                     <ul>
+                         <li>Einwilligung: Explizite Erlaubnis (höchste Priorität).</li>
+                         <li>Berechtigtes Interesse: Basiert auf einer <strong>Interaktion</strong>, die ein beiderseitiges Interesse nahelegt (z.B. aktive Bewerbung, konkrete Projektanfrage durch uns, positive Reaktion).</li>
+                         <li>Keine anfängliche Rechtsgrundlage: Daten können auch aus öffentlichen Quellen stammen, ohne dass sofort ein berechtigtes Interesse besteht. Hier ist eine <strong>zeitnahe Einholung der Einwilligung zwingend</strong>.</li>
+                     </ul>
+                 </li>
+                  <li><strong>Zweckbindung:</strong> Daten werden primär genutzt, um Berater für Projekte zu berücksichtigen und die Beziehung zu verwalten.</li>
+                  <li><strong>Datenminimierung:</strong> Nur notwendige Daten werden erhoben.</li>
+                  <li><strong>Richtigkeit:</strong> Daten sollen aktuell gehalten werden.</li>
+                  <li><strong>Speicherbegrenzung:</strong> Daten werden nicht unbegrenzt aufbewahrt. Die Aufbewahrung basiert auf der <strong>aktuell gültigen Rechtsgrundlage</strong> und den dazugehörigen Fristen.</li>
+                  <li><strong>Betroffenenrechte:</strong> Berater haben Rechte (Auskunft, Berichtigung, Löschung, Widerruf der Einwilligung).</li>
+             </ul>
+         </section>
+
+        <section id="daten-fristen">
+             <h2>II. Wichtige Daten & Fristen (Die "Uhren")</h2>
+             <ul>
+                  <li><code>Datum letztes gezeigtes Interesse</code> (LastInterestShownDate): Das Datum des letzten Ereignisses, das ein <strong>berechtigtes Interesse</strong> begründet (z.B. Profilerstellung durch Bewerbung/Update, positive Antwort).</li>
+                  <li><code>Datum der Einwilligungserteilung</code> (ConsentGrantedDate): Wann der Nutzer explizit zugestimmt hat.</li>
+                  <li><code>Aufbewahrungsfrist (Berechtigtes Interesse)</code>: Konfigurierbare Standarddauer (z.B. 180 Tage), beginnend ab dem <code>Datum letztes gezeigtes Interesse</code>. Gilt, wenn <strong>berechtigtes Interesse</strong> die Grundlage ist.</li>
+                  <li><code>Prüfungsfrist (Ohne Berechtigtes Interesse)</code>: Eine konfigurierbare, <strong>deutlich kürzere</strong> Dauer (z.B. 10 Tage), beginnend ab Datenerfassung. Gilt für Daten, bei denen <strong>kein anfängliches berechtigtes Interesse</strong> besteht (z.B. aus öffentlichen Portalen importiert). In dieser Frist <strong>muss</strong> die Einwilligung eingeholt werden.</li>
+                  <li><code>Ablaufdatum der Datenaufbewahrung</code> (DataRetentionExpiryDate): <strong>Das eine, berechnete Datum</strong>, an dem das aktuelle Recht zur Verarbeitung endet. Es wird bestimmt durch:
+                     <ul>
+                         <li>Wenn aktive Einwilligung: Weit in der Zukunft (oder spezifische Gültigkeitsdauer der Einwilligung, meist "bis Widerruf").</li>
+                         <li>Wenn keine aktive Einwilligung, ABER berechtigtes Interesse besteht: <code>Datum letztes gezeigtes Interesse</code> + <code>Aufbewahrungsfrist (Berechtigtes Interesse)</code>.</li>
+                         <li>Wenn keine aktive Einwilligung UND kein anfängliches berechtigtes Interesse: <code>Datum der Datenerfassung</code> + <code>Prüfungsfrist (Ohne Berechtigtes Interesse)</code>.</li>
+                     </ul>
+                      <em>Dieses Datum wird stets neu berechnet, wenn sich die Rechtsgrundlage ändert (Einwilligung erteilt/widerrufen) oder wenn das <code>Datum letztes gezeigtes Interesse</code> aktualisiert wird (und keine Einwilligung vorliegt).</em>
+                  </li>
+             </ul>
+         </section>
+
+
+        <section id="workflow">
+            <h2>III. Standard-Workflow-Phasen</h2>
+            <p>Der folgende Prozess beschreibt den Lebenszyklus der Beraterdaten in unserem System:</p>
+
+            <!-- Mermaid container with the EXACT working code block you provided -->
+            <div class="mermaid-container" id="mermaid-chart-container">
+                <pre class="mermaid">
+graph TD;
+    A["1. Erstmalige Dateneingabe / Onboarding"] --> B{"Basis: Berechtigtes Interesse"};
+    B --> C["Initiales Ablaufdatum berechnet"];
+    C --> D{"Einwilligungsanfrage senden? (konfigurierbar)"};
+    D -- Ja --> E["2. Einwilligungs- management"];
+    D -- Nein --> F["3. Aktive Periode (Vor Ablauf)"];
+    E --> G{"Nutzer reagiert?"};
+    G -- Akzeptiert --> H["Status: Erteilt \n Ablaufdatum aktualisiert"];
+    G -- Abgelehnt --> I["Status: Abgelehnt \n Ablaufdatum unverändert"];
+    G -- Widerruft --> J["Status: Widerrufen \n Ablaufdatum neu berechnet \n(Basis: Ber. Interesse)"];
+    G -- "Keine Reaktion" --> F;
+    H --> F;
+    I --> F;
+    J --> F;
+    F --> K{"Erneuertes Interesse gezeigt? \n (Keine aktive Einwilligung)"};
+    K -- Ja --> L["LastInterestShownDate aktualisiert \n Ablaufdatum neu berechnet"];
+    K -- Nein --> M["Warten auf Ablauf"];
+    L --> M;
+    M --> N["4. Ablaufdatum erreicht?"];
+    N -- Ja --> O{"Auto-Delete aktiv?"};
+    N -- Nein --> F;
+    O -- Ja --> P["5. Löschung / Anonymisierung \n (Automatisch)"];
+    O -- Nein --> Q["Manuelle Prüfung erforderlich \n Admin entscheidet"];
+    Q -- Löschen --> P;
+    Q -- "Neu anfragen" --> D;
+    P --> R(((Ende)));
+    Q -- "Keine Aktion" --> Q;
+    style A fill:#cce5ff,stroke:#333,stroke-width:1px;
+    style E fill:#cce5ff,stroke:#333,stroke-width:1px;
+    style F fill:#d4edda,stroke:#333,stroke-width:1px;
+    style N fill:#f8d7da,stroke:#333,stroke-width:1px;
+    style P fill:#f8d7da,stroke:#333,stroke-width:1px;
+    style Q fill:#fff3cd,stroke:#333,stroke-width:1px;
+    style R fill:#6c757d,stroke:#333,stroke-width:1px,color:#fff;
+                </pre>
+            </div>
+             <!-- Updated Workflow Description -->
+             <h3>Workflow-Beschreibung:</h3>
+             <ol>
+                 <li><strong>Erstmalige Dateneingabe / Onboarding:</strong> Je nach Herkunft (mit/ohne berechtigtes Interesse) wird die initiale Basis und das erste Ablaufdatum (Standard- oder kurze Prüfungsfrist) gesetzt.</li>
+                 <li><strong>Einwilligungsmanagement:</strong> Link wird gesendet (bei Agentur-Beratern ggf. verzögert). Je nach Reaktion wird Status, Rechtsgrundlage und Ablaufdatum angepasst.</li>
+                 <li><strong>Aktive Periode (Vor Ablauf):</strong> Daten werden genutzt. Zeigt der Berater neues Interesse (ohne aktive Einwilligung), wird die Uhr des berechtigten Interesses neu gestartet.</li>
+                 <li><strong>Vor Ablaufdatum (Reminder):</strong> System sendet konfigurierbare Erinnerungen vor Ablauf. <strong>(Hinweis: Im Diagramm oben vereinfacht dargestellt)</strong></li>
+                 <li><strong>Ablaufdatum erreicht:</strong> Tägliche Prüfung. Je nach Systemeinstellung erfolgt automatische Löschung oder der Datensatz wird zur manuellen Prüfung markiert.</li>
+                 <li><strong>Löschung / Anonymisierung:</strong> Personenbezogene Daten und Verknüpfungen werden entfernt.</li>
+             </ol>
+        </section>
+
+        <section id="typen-spezifika">
+            <!-- Updated Table Content -->
+            <h2>IV. Spezifika nach Berater-Typ</h2>
+             <table>
+                 <thead>
+                     <tr>
+                         <th>Merkmal / Aspekt</th>
+                         <th>Freelancer / Freiberufler</th>
+                         <th>Partner-Berater</th>
+                         <th>Agentur-Berater (Grundtyp: Freelancer/Partner)</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         <td><strong>Primärer Identifikator</strong></td>
+                         <td>External User ID</td>
+                         <td>External User ID</td>
+                         <td>External User ID</td>
+                     </tr>
+                     <tr>
+                         <td><strong>Initiale Basis</strong></td>
+                         <td>Berechtigtes Interesse ODER Einwilligung ausstehend (je nach Herkunft)</td>
+                         <td>Berechtigtes Interesse ODER Einwilligung ausstehend (je nach Herkunft)</td>
+                         <td>Berechtigtes Interesse ODER Einwilligung ausstehend (je nach Herkunft)</td>
+                     </tr>
+                     <tr>
+                         <td><strong>Zeitpunkt Einwilligungsanfrage</strong></td>
+                         <td>Konfigurierbar / Zeitnah (wenn keine Basis)</td>
+                         <td>Konfigurierbar / Zeitnah (wenn keine Basis)</td>
+                         <td>Zeitnah, ABER Versand <strong>erst nach Ablauf der Sperrfrist</strong></td>
+                     </tr>
+                     <tr>
+                         <td><strong>Kontakt für Einwilligungsanfrage</strong></td>
+                         <td>Direkte E-Mail</td>
+                         <td>Direkte E-Mail <strong>ODER</strong> Partner-Kontakt (Fallback, wenn keine direkte Mail vorhanden)</td>
+                         <td><strong>Immer Direkte E-Mail</strong> an den Berater (aber verzögerter Versand, s.o.)</td>
+                     </tr>
+                     <tr>
+                         <td><strong>Sperrfrist der Agentur</strong></td>
+                         <td>N/A</td>
+                         <td>N/A</td>
+                         <td><strong>Ja.</strong> Verzögert primär den <strong>Versand der Einwilligungsanfrage</strong> via direkter Mail. Beeinflusst NICHT die Berechnung des Ablaufdatums selbst.</td>
+                     </tr>
+                     <tr>
+                         <td><strong>Neustart "Interessens-Uhr"</strong></td>
+                         <td>Durch direkte Interaktion/Update</td>
+                         <td>Durch direkte Interaktion/Update</td>
+                         <td>Durch direkte Interaktion/Update (wenn möglich) ODER positives Feedback via Agentur.</td>
+                     </tr>
+                     <tr>
+                         <td><strong>Ablauf-/Löschlogik</strong></td>
+                         <td>Standard (Einwilligung > Ber. Interesse > Prüfungsfrist)</td>
+                         <td>Standard (Einwilligung > Ber. Interesse > Prüfungsfrist)</td>
+                         <td>Standard (Einwilligung > Ber. Interesse > Prüfungsfrist)</td>
+                     </tr>
+                 </tbody>
+             </table>
+        </section>
+
+    </div>
+
+    <!-- Mermaid.js Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+
+</body>
+</html>
