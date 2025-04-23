@@ -64,6 +64,17 @@
             margin-bottom: 0.5em;
         }
 
+        /* Styling for nested lists */
+        ul ul {
+           margin-top: 0.5em;
+           margin-bottom: 0.5em;
+           list-style-type: circle;
+        }
+         ul ul li {
+             margin-bottom: 0.3em;
+         }
+
+
         code {
             background-color: #e9ecef;
             padding: 2px 5px;
@@ -181,18 +192,41 @@
         <section id="daten-fristen">
              <h2>II. Wichtige Daten & Fristen (Die "Uhren")</h2>
              <ul>
-                  <li><code>Datum letztes gezeigtes Interesse</code> (LastInterestShownDate): Das Datum des letzten Ereignisses, das ein <strong>berechtigtes Interesse</strong> begründet (z.B. Profilerstellung durch Bewerbung/Update, positive Antwort).</li>
-                  <li><code>Datum der Einwilligungserteilung</code> (ConsentGrantedDate): Wann der Nutzer explizit zugestimmt hat.</li>
-                  <li><code>Aufbewahrungsfrist (Berechtigtes Interesse)</code>: Konfigurierbare Standarddauer (z.B. 180 Tage), beginnend ab dem <code>Datum letztes gezeigtes Interesse</code>. Gilt, wenn <strong>berechtigtes Interesse</strong> die Grundlage ist.</li>
-                  <li><code>Prüfungsfrist (Ohne Berechtigtes Interesse)</code>: Eine konfigurierbare, <strong>deutlich kürzere</strong> Dauer (z.B. 10 Tage), beginnend ab Datenerfassung. Gilt für Daten, bei denen <strong>kein anfängliches berechtigtes Interesse</strong> besteht (z.B. aus öffentlichen Portalen importiert). In dieser Frist <strong>muss</strong> die Einwilligung eingeholt werden.</li>
-                  <li><code>Ablaufdatum der Datenaufbewahrung</code> (DataRetentionExpiryDate): <strong>Das eine, berechnete Datum</strong>, an dem das aktuelle Recht zur Verarbeitung endet. Es wird bestimmt durch:
-                     <ul>
-                         <li>Wenn aktive Einwilligung: Weit in der Zukunft (oder spezifische Gültigkeitsdauer der Einwilligung, meist "bis Widerruf").</li>
-                         <li>Wenn keine aktive Einwilligung, ABER berechtigtes Interesse besteht: <code>Datum letztes gezeigtes Interesse</code> + <code>Aufbewahrungsfrist (Berechtigtes Interesse)</code>.</li>
-                         <li>Wenn keine aktive Einwilligung UND kein anfängliches berechtigtes Interesse: <code>Datum der Datenerfassung</code> + <code>Prüfungsfrist (Ohne Berechtigtes Interesse)</code>.</li>
-                     </ul>
-                      <em>Dieses Datum wird stets neu berechnet, wenn sich die Rechtsgrundlage ändert (Einwilligung erteilt/widerrufen) oder wenn das <code>Datum letztes gezeigtes Interesse</code> aktualisiert wird (und keine Einwilligung vorliegt).</em>
-                  </li>
+                <li><code>Datum letztes gezeigtes Interesse</code> (LastInterestShownDate): Das Datum des letzten Ereignisses, das ein <strong>berechtigtes Interesse</strong> unsererseits an der weiteren Speicherung und einer potenziellen zukünftigen Zusammenarbeit begründet <em>oder</em> ein aktives Interesse des Beraters signalisiert. Dieses Datum ist der Startpunkt für die Berechnung der Aufbewahrungsfrist, wenn "Berechtigtes Interesse" die aktive Rechtsgrundlage ist.
+                    <ul>
+                        <li><strong>Beispiele für Ereignisse, die dieses Datum aktualisieren (sofern keine aktive Einwilligung vorliegt):</strong>
+                            <ul>
+                                <li><strong>Initiale Datenerfassung aufgrund einer Interaktion:</strong> z.B. Eingang einer aktiven Bewerbung, Erfassung nach einem ersten positiven Gespräch/Austausch.</li>
+                                <li><strong>Explizite positive Rückmeldung des Beraters:</strong> z.B. auf eine Projektanfrage oder eine allgemeine Kontaktaufnahme durch uns ("Ja, ich bin weiterhin interessiert").</li>
+                                <li><strong>Aktive Profilaktualisierung durch den Berater:</strong> Wenn der Berater sein Profil in unserem System selbstständig und wesentlich aktualisiert.</li>
+                                <li><strong>Erfolgreicher Projektabschluss ("Mission End Date"):</strong> Das Enddatum eines abgeschlossenen Projekts dient als letzter starker Interaktionspunkt, ab dem die Frist für berechtigtes Interesse (für <em>zukünftige</em> Projekte) neu beginnt.</li>
+                                <li><em>(Hinweis: Eine reine Anfrage von unserer Seite an den Berater setzt dieses Datum <strong>nicht</strong> zurück. Erst die <strong>positive Reaktion</strong> des Beraters zählt als erneuertes Interesse).</em></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><code>Datum der Einwilligungserteilung</code> (ConsentGrantedDate): Wann der Nutzer explizit der Speicherung über das berechtigte Interesse hinaus zugestimmt hat.</li>
+                <li><code>Aufbewahrungsfrist (Berechtigtes Interesse)</code>: Konfigurierbare Standarddauer (z.B. 180 Tage), beginnend ab dem <code>Datum letztes gezeigtes Interesse</code>. Gilt, wenn <strong>berechtigtes Interesse</strong> die Grundlage ist.</li>
+                <li><code>Prüfungsfrist (Ohne Anfängliches Berechtigtes Interesse)</code>: Eine konfigurierbare, <strong>deutlich kürzere</strong> Dauer (z.B. 10 Tage), beginnend ab Datenerfassung. Gilt für Daten, bei denen <strong>kein anfängliches berechtigtes Interesse</strong> besteht (z.B. aus öffentlichen Portalen importiert). In dieser Frist <strong>muss</strong> die Einwilligung eingeholt werden.</li>
+                <li><strong>Aufbewahrung während & nach Projekten:</strong>
+                    <ul>
+                        <li><strong>Während eines Projekts ("Mission"):</strong> Die primäre Rechtsgrundlage für die projektspezifische Datenverarbeitung ist die <strong>Vertragserfüllung</strong> (Art. 6 Abs. 1 lit. b DSGVO).</li>
+                        <li><strong>Nach Projektabschluss:</strong>
+                            <ul>
+                                <li><strong>Gesetzliche Aufbewahrungspflichten:</strong> Bestimmte Dokumente (Rechnungen, Verträge) unterliegen gesetzlichen Fristen (z.B. 6 oder 10 Jahre nach HGB/AO). Dies betrifft aber nur spezifische Dokumente, nicht automatisch das gesamte Profil für Neuakquise.</li>
+                                <li><strong>Für zukünftige Projekte:</strong> Nach Projektende wird das <code>Datum letztes gezeigtes Interesse</code> auf das Projektabschlussdatum gesetzt. Von da an gilt wieder die Standard-<code>Aufbewahrungsfrist (Berechtigtes Interesse)</code> (z.B. 180 Tage) für die Speicherung des Profils für <em>neue</em> Anfragen, <strong>es sei denn</strong>, der Berater erteilt eine neue, länger gültige Einwilligung. Längere Fristen (wie z.B. 3 Jahre) erfordern in der Regel eine explizite Einwilligung oder eine sehr gut dokumentierte Begründung des fortbestehenden berechtigten Interesses.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><code>Ablaufdatum der Datenaufbewahrung</code> (DataRetentionExpiryDate): <strong>Das eine, berechnete Datum</strong>, an dem das aktuelle Recht zur Verarbeitung endet. Es wird bestimmt durch die jeweils gültige Rechtsgrundlage und Frist:
+                    <ul>
+                        <li>Wenn aktive Einwilligung: Weit in der Zukunft (oder spezifische Gültigkeitsdauer der Einwilligung, meist "bis Widerruf").</li>
+                        <li>Wenn keine aktive Einwilligung, ABER berechtigtes Interesse besteht: <code>Datum letztes gezeigtes Interesse</code> + <code>Aufbewahrungsfrist (Berechtigtes Interesse)</code>.</li>
+                        <li>Wenn keine aktive Einwilligung UND kein anfängliches berechtigtes Interesse: <code>Datum der Datenerfassung</code> + <code>Prüfungsfrist (Ohne Berechtigtes Interesse)</code>.</li>
+                    </ul>
+                     <em>Dieses Datum wird stets neu berechnet, wenn sich die Rechtsgrundlage ändert (Einwilligung erteilt/widerrufen) oder wenn das <code>Datum letztes gezeigtes Interesse</code> aktualisiert wird (und keine Einwilligung vorliegt).</em>
+                 </li>
              </ul>
          </section>
 
